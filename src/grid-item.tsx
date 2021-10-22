@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { checkInContainer, checkWidthHeight } from './utils/dom';
 import ResizeZoom, { EventHandler as ResizeEventHandler, ResizeAxis } from "./react-resize-zoom";
 import Draggable, { DragHandler as DragEventHandler, DragAxis } from "./react-free-draggable";
@@ -169,7 +169,7 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
                 className={cls}
                 axis={this.canDrag() ? dragAxis : DragAxis.none}
                 bounds={bounds}
-                dragNode={handle}
+                handle={handle}
                 onDragStart={this.onDragStart}
                 onDrag={this.onDrag}
                 onDragStop={this.onDragEnd}

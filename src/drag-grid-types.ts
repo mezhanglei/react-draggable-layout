@@ -3,7 +3,7 @@ import { DragTypes, GridItemEvent ,EventType} from './grid-item-types';
 export type DragGridHandler = (layoutItem: GridItemEvent, oldLayout: GridItemEvent[], currentLayout?: GridItemEvent[], e?: EventType) => void;
 
 export interface DragGridProps {
-    layout: GridItemEvent[];
+    layout: GridItemEvent[]
     cols: number;
     width: number;
     padding?: [number, number];
