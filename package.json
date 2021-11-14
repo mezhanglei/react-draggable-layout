@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "draggable layout",
   "main": "lib/bundle.js",
+  "types": "./lib/index.d.ts",
   "repository": "https://github.com/mezhanglei",
   "files": [
     "lib",
