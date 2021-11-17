@@ -2,7 +2,7 @@
 
 [English](./README.md) | 中文说明
 
-[![Version](https://img.shields.io/badge/version-0.0.5-green)](https://www.npmjs.com/package/react-draggable-layout)
+[![Version](https://img.shields.io/badge/version-0.1.0-green)](https://www.npmjs.com/package/react-draggable-layout)
 
 # 适用场景
 
@@ -136,8 +136,8 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | uniqueKey                      | `string`           |-                                                 | 唯一key值                                                                                  |
 | forbid                      | `boolean`           |-                                                 | 禁止拖拽，设置了这个就不会被拖拽，成为静态元素                                                                                  |
 | handle                      | `string / HTMLElement`           |`document.body / document.documentElement`                                                 | 拖拽句柄                                                                                  |
-| dragAxis                      | `x / y / both / none`           |`both`                                                 | 允许拖拽的方向                                                                                  |
-| resizeAxis                      | `auto / x / y / angle / none`           |`auto`                                                 | 允许缩放的边角                                                                                  |
+| dragAxis                      | `['x', 'y']`           |-                                                 | 允许拖拽的方向                                                                                  |
+| resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | 允许缩放的边角                                                                                  |
 | zIndexRange                      | `[number, number]`           |-                                                 | zIndex的变化范围                                                                                  |
 | isMove                      | `boolean`           |-                                                 | 是否在移动中                                                                                  |
 

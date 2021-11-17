@@ -57,6 +57,7 @@ export class LayoutRestore extends React.Component<{}, {}> {
                 {...dragactInit}
                 ref={node => node ? this.dragactNode = node : null}
                 onDragEnd={this.handleOnDragEnd}
+                onResizeEnd={this.handleOnDragEnd}
 
             >
                 {

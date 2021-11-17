@@ -2,7 +2,7 @@
 
 English | [中文说明](./README_CN.md)
 
-[![Version](https://img.shields.io/badge/version-0.0.5-green)](https://www.npmjs.com/package/react-draggable-layout)
+[![Version](https://img.shields.io/badge/version-0.1.0-green)](https://www.npmjs.com/package/react-draggable-layout)
 
 # Introduction?
 Components with custom layout by drag and drop can also define the layout of the elements of the interface by means of a fixed format data source. The element is set to `position: absolute`.
@@ -135,8 +135,8 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | uniqueKey                      | `string`           |-                                                 | Unique key value                                                                                  |
 | forbid                      | `boolean`           |-                                                 | forbid dragging, set this so it won't be dragged and becomes a static element                                                                                  |
 | handle                      | `string / HTMLElement`           |`document.body / document.documentElement`                                                 | Drag handles                                                                                  |
-| dragAxis                      | `x / y / both / none`           |`both`                                                 | Allowed directions for dragging                                                                                  |
-| resizeAxis                      | `auto / x / y / angle / none`           |`auto`                                                 | Scaled corners allowed                                                                                  |
+| dragAxis                      | `['x', 'y']`           |-                                                 | Allowed directions for dragging                                                                                  |
+| resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | Scaled corners allowed                                                                                  |
 | zIndexRange                      | `[number, number]`           |-                                                 | Range of variation of zIndex                                                                                  |
 | isMove                      | `boolean`           |-                                                 | Is it on the move                                                                                  |
 
