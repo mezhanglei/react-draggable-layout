@@ -1,6 +1,6 @@
 {
   "name": "react-draggable-layout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "draggable layout",
   "main": "lib/bundle.js",
   "types": "./lib/index.d.ts",
