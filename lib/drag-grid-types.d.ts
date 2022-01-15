@@ -1,9 +1,8 @@
-import { DragTypes, GridItemEvent ,EventType} from './grid-item-types';
-
-export type DragGridHandler = (layoutItem: GridItemEvent, oldLayout: GridItemEvent[], currentLayout?: GridItemEvent[], e?: EventType) => void;
-
+/// <reference types="react" />
+import { DragTypes, GridItemEvent, EventType } from './grid-item-types';
+export declare type DragGridHandler = (layoutItem: GridItemEvent, oldLayout: GridItemEvent[], currentLayout?: GridItemEvent[], e?: EventType) => void;
 export interface DragGridProps {
-    layout: GridItemEvent[]
+    layout: GridItemEvent[];
     cols: number;
     width: number;
     padding?: [number, number];
@@ -19,12 +18,10 @@ export interface DragGridProps {
     className: number | string;
     style?: React.CSSProperties;
 }
-
 export interface DragGridState {
     layout: GridItemEvent[];
     parentDragType?: DragTypes;
 }
-
 export interface GridItemProvided {
-    isDragging: Boolean
+    isDragging: Boolean;
 }
