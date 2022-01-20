@@ -53,7 +53,6 @@ export const Card: (any: any) => any = React.forwardRef(({ item, style }, ref) =
                 {item.content}
             </div>
             <span
-                // {...provided.resizeHandle}
                 style={{
                     position: 'absolute',
                     width: 10, height: 10, right: 2, bottom: 2, cursor: 'se-resize',
@@ -138,7 +137,6 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | dragAxis                      | `['x', 'y']`           |-                                                 | Allowed directions for dragging                                                                                  |
 | resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | Scaled corners allowed                                                                                  |
 | zIndexRange                      | `[number, number]`           |-                                                 | Range of variation of zIndex                                                                                  |
-| isMove                      | `boolean`           |-                                                 | Is it on the move                                                                                  |
 
 
 

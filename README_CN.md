@@ -54,7 +54,6 @@ export const Card: (any: any) => any = React.forwardRef(({ item, style }, ref) =
                 {item.content}
             </div>
             <span
-                // {...provided.resizeHandle}
                 style={{
                     position: 'absolute',
                     width: 10, height: 10, right: 2, bottom: 2, cursor: 'se-resize',
@@ -139,7 +138,6 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | dragAxis                      | `['x', 'y']`           |-                                                 | 允许拖拽的方向                                                                                  |
 | resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | 允许缩放的边角                                                                                  |
 | zIndexRange                      | `[number, number]`           |-                                                 | zIndex的变化范围                                                                                  |
-| isMove                      | `boolean`           |-                                                 | 是否在移动中                                                                                  |
 
 
 
