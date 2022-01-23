@@ -6,7 +6,7 @@ import { DragGridProps } from './drag-grid-types';
 import classNames from "classnames";
 import { throttle } from './utils/common';
 
-const DragGrid = React.forwardRef<any, DragGridProps>((props, ref) => {
+const DragGrid = React.forwardRef<{}, DragGridProps>((props, ref) => {
 
   const [layout, setLayout] = useState<GridItemEvent[]>([]);
   const [parentDragType, setParentDragType] = useState<DragTypes>();
@@ -95,7 +95,6 @@ const DragGrid = React.forwardRef<any, DragGridProps>((props, ref) => {
 
   const onResizing: GridItemEventHandle = (layoutItem, e) => {
     throttleFn(() => {
-      setParentDragType(DragTypes.resizing);
       const newLayout = layoutCheck(
         layout,
         layoutItem
