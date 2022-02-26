@@ -18,27 +18,27 @@ export default class GridItem extends React.Component<GridItemProps, {
         resizeAxis: import("react-resize-zoom").Direction[];
     };
     calcolsWidth: () => number;
-    calGridXYToPx: (GridX: number, GridY: number) => {
-        x: number;
-        y: number;
+    calGridXYToPx: (GridX?: number | undefined, GridY?: number | undefined) => {
+        x: number | undefined;
+        y: number | undefined;
     };
     calPxToGridXY: (x: number, y: number) => {
-        GridX: number;
-        GridY: number;
+        GridX: number | undefined;
+        GridY: number | undefined;
     };
-    calWHtoPx: (w: number, h: number) => {
-        wPx: number;
-        hPx: number;
+    calWHtoPx: (w?: number | undefined, h?: number | undefined) => {
+        wPx: number | undefined;
+        hPx: number | undefined;
     };
     calPxToWH: (wPx: number, hPx: number) => {
-        w: number;
-        h: number;
+        w: number | undefined;
+        h: number | undefined;
     };
     addEventParams: (data: object) => {
-        GridX: number;
-        GridY: number;
-        w: number;
-        h: number;
+        GridX: number | undefined;
+        GridY: number | undefined;
+        w: number | undefined;
+        h: number | undefined;
         uniqueKey: string | number | undefined;
         margin: [number, number] | undefined;
         forbid: boolean | undefined;

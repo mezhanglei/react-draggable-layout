@@ -1,6 +1,6 @@
 import React from "react";
 import { checkInContainer, checkWidthHeight } from './utils/dom';
-import ResizeZoom, { DirectionCode, EventHandler as ResizeEventHandler } from "react-resize-zoom";
+import ResizeZoom, { EventHandler as ResizeEventHandler, DirectionCode } from "react-resize-zoom";
 import Draggable, { DragHandler as DragEventHandler, DragAxisCode } from "react-free-draggable";
 import classNames from "classnames";
 import { GridItemProps, DragTypes } from './grid-item-types';
@@ -35,11 +35,17 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
   }
 
   // 布局位置计算为px单位
-  calGridXYToPx = (GridX: number, GridY: number) => {
+  calGridXYToPx = (GridX?: number, GridY?: number) => {
     let { margin, rowHeight } = this.props
     if (!margin) margin = [0, 0];
-    const x = Math.round(GridX * this.calcolsWidth() + (GridX + 1) * margin[0])
-    const y = Math.round(GridY * rowHeight + margin[1] * (GridY + 1))
+    let x;
+    let y;
+    if (typeof GridX === 'number') {
+      x = Math.round(GridX * this.calcolsWidth() + (GridX + 1) * margin[0])
+    }
+    if (typeof GridY === 'number') {
+      y = Math.round(GridY * rowHeight + margin[1] * (GridY + 1))
+    }
     return { x, y };
   }
 
@@ -49,18 +55,22 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
     // 坐标计算为格子时无需计算margin
     let GridX = Math.round(x / containerWidth * cols)
     let GridY = Math.round(y / (rowHeight + (margin ? margin[1] : 0)))
-    return checkInContainer(GridX, GridY, cols, w)
+    return checkInContainer(cols, GridX, GridY, w)
   }
 
   // 布局宽高转化为px单位
-  calWHtoPx = (w: number, h: number) => {
+  calWHtoPx = (w?: number, h?: number) => {
     let { margin, rowHeight } = this.props
-
     if (!margin) margin = [0, 0];
-    const wPx = Math.round(w * this.calcolsWidth() + (w - 1) * margin[0])
-    const hPx = Math.round(h * rowHeight + (h - 1) * margin[1])
-
-    return { wPx, hPx }
+    let wPx;
+    let hPx;
+    if (typeof w === 'number') {
+      wPx = Math.round(w * this.calcolsWidth() + (w - 1) * margin[0])
+    }
+    if (typeof h === 'number') {
+      hPx = Math.round(h * rowHeight + (h - 1) * margin[1])
+    }
+    return { wPx, hPx };
   }
 
   // px转化为布局宽高单位
@@ -69,7 +79,7 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
     const calWidth = this.calcolsWidth();
     const w = Math.round((wPx - calWidth * 0.5) / calWidth);
     const h = Math.round((hPx - rowHeight * 0.5) / rowHeight);
-    return checkWidthHeight(GridX, w, h, cols);
+    return checkWidthHeight(cols, GridX, w, h);
   }
 
   addEventParams = (data: object) => {

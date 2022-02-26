@@ -1,6 +1,6 @@
 {
   "name": "react-draggable-layout",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "draggable layout",
   "main": "lib/bundle.js",
   "types": "./lib/index.d.ts",
@@ -91,14 +91,14 @@
     "@types/react-router-dom": "^5.1.7",
     "antd": "^4.4.2",
     "classnames": "^2.2.6",
-    "immer": "^9.0.5",
+    "klona": "^2.0.5",
     "object-fit-images": "^3.2.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-free-draggable": "^6.1.2",
+    "react-free-draggable": "^6.1.3",
     "react-loadable": "^5.5.0",
     "react-redux": "^7.2.0",
-    "react-resize-zoom": "^2.1.4",
+    "react-resize-zoom": "^2.1.6",
     "react-router-dom": "^5.1.2"
   },
   "browserslist": [

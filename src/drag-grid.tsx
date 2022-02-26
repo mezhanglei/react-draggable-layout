@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
 import GridItem from './grid-item';
 import { GridItemEventHandle, DragTypes, GridItemEvent } from "./grid-item-types";
-import { compactLayout, layoutCheck, correctLayout, getLayoutItem, bottom } from './utils/dom';
+import { compactLayout, layoutCheck, correctLayout, bottom, getLayoutItem } from './utils/dom';
 import { DragGridProps } from './drag-grid-types';
 import classNames from "classnames";
 import { throttle } from './utils/common';
@@ -10,7 +10,7 @@ const DragGrid = React.forwardRef<{}, DragGridProps>((props, ref) => {
 
   const [layout, setLayout] = useState<GridItemEvent[]>([]);
   const [parentDragType, setParentDragType] = useState<DragTypes>();
-  const [placeholder, setPlaceholder] = useState<{ GridX: number, GridY: number, w: number, h: number }>({ GridX: 0, GridY: 0, w: 0, h: 0 });
+  const [placeholder, setPlaceholder] = useState<{ GridX?: number, GridY?: number, w?: number, h?: number }>({});
 
   const parentRef = useRef<any>();
   // 节流函数
@@ -149,7 +149,7 @@ const DragGrid = React.forwardRef<{}, DragGridProps>((props, ref) => {
   };
 
   const renderPlaceholder = () => {
-    if (parentDragType && [DragTypes.dragEnd, DragTypes.resizeEnd].includes(parentDragType)) return;
+    if (!parentDragType || [DragTypes.dragEnd, DragTypes.resizeEnd].includes(parentDragType)) return;
     return (
       <GridItem
         margin={props?.margin}

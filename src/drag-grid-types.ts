@@ -1,4 +1,5 @@
-import { DragTypes, GridItemEvent ,EventType} from './grid-item-types';
+import { EventType } from 'react-resize-zoom';
+import { DragTypes, GridItemEvent } from './grid-item-types';
 
 export type DragGridHandler = (layoutItem: GridItemEvent, oldLayout: GridItemEvent[], currentLayout?: GridItemEvent[], e?: EventType) => void;
 
