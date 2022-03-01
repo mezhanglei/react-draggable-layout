@@ -2,7 +2,7 @@
 
 [English](./README.md) | 中文说明
 
-[![Version](https://img.shields.io/badge/version-0.1.5-green)](https://www.npmjs.com/package/react-draggable-layout)
+[![Version](https://img.shields.io/badge/version-0.1.6-green)](https://www.npmjs.com/package/react-draggable-layout)
 
 # 适用场景
 
@@ -137,7 +137,6 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | handle                      | `string / HTMLElement`           |`document.body / document.documentElement`                                                 | 拖拽句柄                                                                                  |
 | dragAxis                      | `['x', 'y']`           |-                                                 | 允许拖拽的方向                                                                                  |
 | resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | 允许缩放的边角                                                                                  |
-| zIndexRange                      | `[number, number]`           |-                                                 | zIndex的变化范围                                                                                  |
 
 
 

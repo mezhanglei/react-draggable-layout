@@ -2,7 +2,7 @@
 
 English | [中文说明](./README_CN.md)
 
-[![Version](https://img.shields.io/badge/version-0.1.5-green)](https://www.npmjs.com/package/react-draggable-layout)
+[![Version](https://img.shields.io/badge/version-0.1.6-green)](https://www.npmjs.com/package/react-draggable-layout)
 
 # Introduction?
 Components with custom layout by drag and drop can also define the layout of the elements of the interface by means of a fixed format data source. The element is set to `position: absolute`.
@@ -136,7 +136,6 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | handle                      | `string / HTMLElement`           |`document.body / document.documentElement`                                                 | Drag handles                                                                                  |
 | dragAxis                      | `['x', 'y']`           |-                                                 | Allowed directions for dragging                                                                                  |
 | resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | Scaled corners allowed                                                                                  |
-| zIndexRange                      | `[number, number]`           |-                                                 | Range of variation of zIndex                                                                                  |
 
 
 

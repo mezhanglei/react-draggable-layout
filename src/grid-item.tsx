@@ -6,8 +6,10 @@ import classNames from "classnames";
 import { GridItemProps, DragTypes } from './grid-item-types';
 
 export default class GridItem extends React.Component<GridItemProps, { dragType?: DragTypes }> {
+  lastZindex: any;
   constructor(props: GridItemProps) {
     super(props)
+    this.lastZindex = '';
     this.state = {
       dragType: undefined
     }
@@ -83,8 +85,8 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
   }
 
   addEventParams = (data: object) => {
-    const { GridX, GridY, w, h, uniqueKey, margin, forbid, handle, dragAxis, resizeAxis, zIndexRange } = this.props;
-    return { GridX, GridY, w, h, uniqueKey, margin, forbid, handle, dragAxis, resizeAxis, zIndexRange, ...data };
+    const { GridX, GridY, w, h, uniqueKey, margin, forbid, handle, dragAxis, resizeAxis } = this.props;
+    return { GridX, GridY, w, h, uniqueKey, margin, forbid, handle, dragAxis, resizeAxis, ...data };
   }
 
   onDragStart: DragEventHandler = (e, data) => {
@@ -92,6 +94,10 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
       dragType: DragTypes.dragStart
     });
     if (!data || !this.canDrag()) return;
+    this.lastZindex = data?.node?.style?.zIndex;
+    if (data?.node?.style?.zIndex != '999') {
+      data.node.style.zIndex = '999'
+    }
     const { x = 0, y = 0 } = data;
     const { GridX, GridY } = this.calPxToGridXY(x, y)
     this.props.onDragStart && this.props.onDragStart(this.addEventParams({ GridX, GridY }), e)
@@ -102,6 +108,9 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
       dragType: DragTypes.draging
     });
     if (!data || !this.canDrag()) return;
+    if (data?.node?.style?.zIndex != '999') {
+      data.node.style.zIndex = '999'
+    }
     const { x = 0, y = 0 } = data;
     const { GridX, GridY } = this.calPxToGridXY(x, y);
     this.props.onDrag && this.props.onDrag(this.addEventParams({ GridX, GridY }), e)
@@ -112,15 +121,21 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
       dragType: DragTypes.dragEnd
     })
     if (!data || !this.canDrag()) return;
+    data.node.style.zIndex = this.lastZindex;
     const { x = 0, y = 0 } = data;
     const { GridX, GridY } = this.calPxToGridXY(x, y);
     if (this.props.onDragEnd) this.props.onDragEnd(this.addEventParams({ GridX, GridY }), e);
   }
 
-  onResizeStart: ResizeEventHandler = (e) => {
+  onResizeStart: ResizeEventHandler = (e, data) => {
     this.setState({
       dragType: DragTypes.resizeStart
     })
+    if (!data || !this.canResize()) return;
+    this.lastZindex = data?.node?.style?.zIndex;
+    if (data?.node?.style?.zIndex != '999') {
+      data.node.style.zIndex = '999'
+    }
     this.props.onResizeStart && this.props.onResizeStart(this.addEventParams({}), e)
   }
 
@@ -129,6 +144,9 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
       dragType: DragTypes.resizing
     })
     if (!data || !this.canResize()) return;
+    if (data?.node?.style?.zIndex != '999') {
+      data.node.style.zIndex = '999'
+    }
     const { width, height } = data;
     const { w, h } = this.calPxToWH(width, height);
     this.props.onResizing && this.props.onResizing(this.addEventParams({ w, h }), e)
@@ -139,6 +157,7 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
       dragType: DragTypes.resizeEnd
     })
     if (!data || !this.canResize()) return;
+    data.node.style.zIndex = this.lastZindex;
     const { width, height } = data;
     const { w, h } = this.calPxToWH(width, height);
     this.props.onResizeEnd && this.props.onResizeEnd(this.addEventParams({ w, h }), e)
@@ -159,7 +178,7 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
   }
 
   render() {
-    const { w, h, style, bounds, GridX, GridY, handle, dragAxis, resizeAxis, zIndexRange, children, className } = this.props;
+    const { w, h, style, bounds, GridX, GridY, handle, dragAxis, resizeAxis, children, className } = this.props;
     const dragType = this.state.dragType;
     const { x, y } = this.calGridXYToPx(GridX, GridY);
     const { wPx, hPx } = this.calWHtoPx(w, h);
@@ -175,7 +194,6 @@ export default class GridItem extends React.Component<GridItemProps, { dragType?
         onDragStart={this.onDragStart}
         onDrag={this.onDrag}
         onDragStop={this.onDragEnd}
-        zIndexRange={zIndexRange}
         x={x}
         y={y}
       >

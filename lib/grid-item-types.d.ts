@@ -22,7 +22,6 @@ export interface GridItemEvent {
     handle?: string | HTMLElement;
     dragAxis?: string[];
     resizeAxis?: Direction[];
-    zIndexRange?: [number, number];
 }
 export declare type GridItemEventHandle = (data: GridItemEvent, e: EventType) => void;
 export interface GridItemProps extends GridItemEvent {

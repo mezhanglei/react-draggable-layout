@@ -5,6 +5,7 @@ import { GridItemProps, DragTypes } from './grid-item-types';
 export default class GridItem extends React.Component<GridItemProps, {
     dragType?: DragTypes;
 }> {
+    lastZindex: any;
     constructor(props: GridItemProps);
     static defaultProps: {
         cols: number;
@@ -45,7 +46,6 @@ export default class GridItem extends React.Component<GridItemProps, {
         handle: string | HTMLElement | undefined;
         dragAxis: string[] | undefined;
         resizeAxis: import("react-resize-zoom").Direction[] | undefined;
-        zIndexRange: [number, number] | undefined;
     };
     onDragStart: DragEventHandler;
     onDrag: DragEventHandler;
