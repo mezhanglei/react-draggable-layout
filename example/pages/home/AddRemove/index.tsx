@@ -1,5 +1,5 @@
-import * as React from 'react'
-import DragGrid from '../../../../src'
+import * as React from 'react';
+import DragGrid from '../../../../src';
 
 const Words = [
     { content: 'You can do anything, but not everything.' },
@@ -55,7 +55,7 @@ const fakeData = () => {
 }
 
 const makeOne = () => {
-    return { content: 'added', GridX: 0, GridY: 0, w: 4, h: 3, uniqueKey: Date.now() }
+    return { content: 'added', GridX: 0, GridY: 5, w: 4, h: 3, uniqueKey: Date.now() }
 }
 
 export class AddRemove extends React.Component<{}, {}> {
@@ -96,7 +96,7 @@ export class AddRemove extends React.Component<{}, {}> {
         }
         return (
             <div>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100vw' }}>
                     <div>
                         <h1 style={{ textAlign: 'center' }}>AddRemove Demo</h1>
                         <h3 style={{ textAlign: 'center' }}>在这个布局中，新增一个布局，会新加入一个布局</h3>

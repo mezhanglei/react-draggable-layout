@@ -2,7 +2,7 @@
 
 [English](./README.md) | 中文说明
 
-[![Version](https://img.shields.io/badge/version-0.1.7-green)](https://www.npmjs.com/package/react-draggable-layout)
+[![Version](https://img.shields.io/badge/version-0.2.0-green)](https://www.npmjs.com/package/react-draggable-layout)
 
 # 适用场景
 
@@ -117,9 +117,9 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | padding                      | `[number, number]`            | `[0,0]`                                                  | 容器的`padding`                                                                                  |
 | rowHeight                      | `number`            | 30                                                  | 容器内的子元素布局的行高                                                                                  |
 | margin                      | `[number, number]`           |`[10, 10]`                                                 | 容器内子元素的`margin`                                                                                  |
-| onDragStart                      | `DragGridHandler`           |-                                                 | 拖拽开始事件                                                                                  |
-| onDrag                      | `DragGridHandler`           |-                                                 | 拖拽事件                                                                                  |
-| onDragEnd                      | `DragGridHandler`           |-                                                 | 拖拽结束事件                                                                                  |
+| onStart                      | `DragGridHandler`           |-                                                 | 拖拽开始事件                                                                                  |
+| onMove                      | `DragGridHandler`           |-                                                 | 拖拽事件                                                                                  |
+| onEnd                      | `DragGridHandler`           |-                                                 | 拖拽结束事件                                                                                  |
 | onResizeStart                      | `DragGridHandler`           |-                                                 | 缩放开始事件                                                                                  |
 | onResizing                      | `DragGridHandler`           |-                                                 | 缩放事件                                                                                  |
 | onResizeEnd                      | `DragGridHandler`           |-                                                 | 拖拽结束事件                                                                                  |
@@ -135,8 +135,7 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | uniqueKey                      | `string`           |-                                                 | 唯一key值                                                                                  |
 | forbid                      | `boolean`           |-                                                 | 禁止拖拽，设置了这个就不会被拖拽，成为静态元素                                                                                  |
 | handle                      | `string / HTMLElement`           |`document.body / document.documentElement`                                                 | 拖拽句柄                                                                                  |
-| dragAxis                      | `['x', 'y']`           |-                                                 | 允许拖拽的方向                                                                                  |
-| resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | 允许缩放的边角                                                                                  |
+| direction                      | `['vertical', 'horizontal', 'e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | 允许拖拽的方向                                                                                  |
 
 
 

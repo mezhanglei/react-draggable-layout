@@ -15,8 +15,7 @@ export default class GridItem extends React.Component<GridItemProps, {
         rowHeight: number;
         w: number;
         h: number;
-        dragAxis: import("react-free-draggable").DragAxis[];
-        resizeAxis: import("react-resize-zoom").Direction[];
+        direction: import("./grid-item-types").DragDirection[];
     };
     calcolsWidth: () => number;
     calGridXYToPx: (GridX?: number | undefined, GridY?: number | undefined) => {
@@ -44,12 +43,11 @@ export default class GridItem extends React.Component<GridItemProps, {
         margin: [number, number] | undefined;
         forbid: boolean | undefined;
         handle: string | HTMLElement | undefined;
-        dragAxis: string[] | undefined;
-        resizeAxis: import("react-resize-zoom").Direction[] | undefined;
+        direction: string[] | undefined;
     };
-    onDragStart: DragEventHandler;
-    onDrag: DragEventHandler;
-    onDragEnd: DragEventHandler;
+    onStart: DragEventHandler;
+    onMove: DragEventHandler;
+    onEnd: DragEventHandler;
     onResizeStart: ResizeEventHandler;
     onResizing: ResizeEventHandler;
     onResizeEnd: ResizeEventHandler;

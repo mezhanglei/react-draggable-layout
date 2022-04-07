@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DragGrid from '../../../../src'
+import DragGrid from '../../../../src';
 import { Card } from '../NormalLayout/index';
 import './index.css';
 
@@ -56,9 +56,8 @@ export class LayoutRestore extends React.Component<{}, {}> {
             <DragGrid
                 {...dragactInit}
                 ref={node => node ? this.dragactNode = node : null}
-                onDragEnd={this.handleOnDragEnd}
+                onEnd={this.handleOnDragEnd}
                 onResizeEnd={this.handleOnDragEnd}
-
             >
                 {
                     dragactInit.layout?.map((item, index) => {
@@ -71,7 +70,7 @@ export class LayoutRestore extends React.Component<{}, {}> {
 
     render() {
         return (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100vw' }}>
                 <div>
                     <h1 style={{ textAlign: 'center' }}>存储布局 Demo</h1>
                     {this.renderDragGrid()}

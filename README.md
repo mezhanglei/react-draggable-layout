@@ -2,7 +2,7 @@
 
 English | [中文说明](./README_CN.md)
 
-[![Version](https://img.shields.io/badge/version-0.1.7-green)](https://www.npmjs.com/package/react-draggable-layout)
+[![Version](https://img.shields.io/badge/version-0.2.0-green)](https://www.npmjs.com/package/react-draggable-layout)
 
 # Introduction?
 Components with custom layout by drag and drop can also define the layout of the elements of the interface by means of a fixed format data source. The element is set to `position: absolute`.
@@ -116,9 +116,9 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | padding                      | `[number, number]`            | `[0,0]`                                                  | container's `padding`                                                                                  |
 | rowHeight                      | `number`            | 30                                                  | The row height of the layout of the child elements within the container                                                                                  |
 | margin                      | `[number, number]`           |`[10, 10]`                                                 | the child elements in the container's `margin`                                                                                  |
-| onDragStart                      | `DragGridHandler`           |-                                                 | Drag start event                                                                                  |
-| onDrag                      | `DragGridHandler`           |-                                                 | Draging event                                                                                  |
-| onDragEnd                      | `DragGridHandler`           |-                                                 | Drag end event                                                                                  |
+| onStart                      | `DragGridHandler`           |-                                                 | Drag start event                                                                                  |
+| onMove                      | `DragGridHandler`           |-                                                 | Draging event                                                                                  |
+| onEnd                      | `DragGridHandler`           |-                                                 | Drag end event                                                                                  |
 | onResizeStart                      | `DragGridHandler`           |-                                                 | scale start event                                                                                  |
 | onResizing                      | `DragGridHandler`           |-                                                 | scaling event                                                                                  |
 | onResizeEnd                      | `DragGridHandler`           |-                                                 | scale end event                                                                                  |
@@ -134,8 +134,7 @@ export class LayoutDemo extends React.Component<{}, {}> {
 | uniqueKey                      | `string`           |-                                                 | Unique key value                                                                                  |
 | forbid                      | `boolean`           |-                                                 | forbid dragging, set this so it won't be dragged and becomes a static element                                                                                  |
 | handle                      | `string / HTMLElement`           |`document.body / document.documentElement`                                                 | Drag handles                                                                                  |
-| dragAxis                      | `['x', 'y']`           |-                                                 | Allowed directions for dragging                                                                                  |
-| resizeAxis                      | `['e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | Scaled corners allowed                                                                                  |
+| direction                      | `['vertical', 'horizontal', 'e', 'w', 's', 'n', 'ne', 'nw', 'se', 'sw']`           |-                                                 | Allowed directions for dragging                                                                                  |
 
 
 

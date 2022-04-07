@@ -1,15 +1,27 @@
 /// <reference types="react" />
 import { BoundsInterface } from "react-free-draggable";
-import { Direction } from "react-resize-zoom";
 export declare type EventType = MouseEvent | TouchEvent;
 export declare enum DragTypes {
-    dragStart = "dragStart",
-    draging = "draging",
-    dragEnd = "dragEnd",
-    resizeStart = "resizeStart",
-    resizing = "resizing",
-    resizeEnd = "resizeEnd"
+    Start = "start",
+    Move = "move",
+    End = "end",
+    ResizeStart = "resizeStart",
+    Resizing = "resizing",
+    ResizeEnd = "resizeEnd"
 }
+export declare enum DragDirection {
+    Vertical = "vertical",
+    Horizontal = "horizontal",
+    N = "n",
+    S = "s",
+    W = "w",
+    E = "e",
+    NE = "ne",
+    NW = "nw",
+    SE = "se",
+    SW = "sw"
+}
+export declare const DragDirectionCode: DragDirection[];
 export interface GridItemEvent {
     GridX?: number;
     GridY?: number;
@@ -20,8 +32,7 @@ export interface GridItemEvent {
     forbid?: boolean;
     bounds?: string | HTMLElement | BoundsInterface;
     handle?: string | HTMLElement;
-    dragAxis?: string[];
-    resizeAxis?: Direction[];
+    direction?: string[];
 }
 export declare type GridItemEventHandle = (data: GridItemEvent, e: EventType) => void;
 export interface GridItemProps extends GridItemEvent {
@@ -30,9 +41,9 @@ export interface GridItemProps extends GridItemEvent {
     containerWidth: number;
     containerPadding: [number, number];
     rowHeight: number;
-    onDragStart?: GridItemEventHandle;
-    onDragEnd?: GridItemEventHandle;
-    onDrag?: GridItemEventHandle;
+    onStart?: GridItemEventHandle;
+    onMove?: GridItemEventHandle;
+    onEnd?: GridItemEventHandle;
     onResizeStart?: GridItemEventHandle;
     onResizing?: GridItemEventHandle;
     onResizeEnd?: GridItemEventHandle;

@@ -10,9 +10,9 @@ export interface DragGridProps {
     rowHeight: number;
     margin: [number, number];
     children: any;
-    onDragStart?: DragGridHandler;
-    onDrag?: DragGridHandler;
-    onDragEnd?: DragGridHandler;
+    onStart?: DragGridHandler;
+    onMove?: DragGridHandler;
+    onEnd?: DragGridHandler;
     onResizeStart?: DragGridHandler;
     onResizing?: DragGridHandler;
     onResizeEnd?: DragGridHandler;
