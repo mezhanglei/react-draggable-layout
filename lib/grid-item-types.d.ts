@@ -9,19 +9,6 @@ export declare enum DragTypes {
     Resizing = "resizing",
     ResizeEnd = "resizeEnd"
 }
-export declare enum DragDirection {
-    Vertical = "vertical",
-    Horizontal = "horizontal",
-    N = "n",
-    S = "s",
-    W = "w",
-    E = "e",
-    NE = "ne",
-    NW = "nw",
-    SE = "se",
-    SW = "sw"
-}
-export declare const DragDirectionCode: DragDirection[];
 export interface GridItemEvent {
     GridX?: number;
     GridY?: number;

@@ -16,7 +16,7 @@ export interface DragGridProps {
     onResizeStart?: DragGridHandler;
     onResizing?: DragGridHandler;
     onResizeEnd?: DragGridHandler;
-    className: number | string;
+    className?: string;
     style?: React.CSSProperties;
 }
 export interface DragGridState {
