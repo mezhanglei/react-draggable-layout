@@ -16,12 +16,12 @@ export declare const compactItem: (finishedLayout: GridItemEvent[], item: GridIt
  * 压缩layout，使得每一个元素都会紧挨着边界或者相邻的元素
  * @param {*} layout
  */
-export declare const compactLayout: (layout: GridItemEvent[], movingItem?: GridItemEvent | undefined) => any[];
-export declare const checkInContainer: (cols: number, GridX?: number | undefined, GridY?: number | undefined, w?: number | undefined) => {
+export declare const compactLayout: (layout: GridItemEvent[], movingItem?: GridItemEvent) => any[];
+export declare const checkInContainer: (cols: number, GridX?: number, GridY?: number, w?: number) => {
     GridX: number | undefined;
     GridY: number | undefined;
 };
-export declare const checkWidthHeight: (cols: number, GridX?: number | undefined, w?: number | undefined, h?: number | undefined) => {
+export declare const checkWidthHeight: (cols: number, GridX?: number, w?: number, h?: number) => {
     w: number | undefined;
     h: number | undefined;
 };

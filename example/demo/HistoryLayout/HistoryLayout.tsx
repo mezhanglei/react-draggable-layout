@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useImperativeHandle } from 'react';
-import DragGrid, { GridItemEvent, DragGridProps, DragGridHandler } from '../../../../src';
+import DragGrid, { GridItemEvent, DragGridProps, DragGridHandler } from '../../../src';
 
 export interface DragGridRef {
     go: () => void;

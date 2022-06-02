@@ -15,10 +15,10 @@ export default class GridItem extends React.Component<GridItemProps, {
         rowHeight: number;
         w: number;
         h: number;
-        direction: (import("react-resize-zoom").ResizeDirection | import("react-free-draggable").DragDirection)[];
+        direction: (import("react-free-draggable").DragDirection | import("react-resize-zoom").ResizeDirection)[];
     };
     calcolsWidth: () => number;
-    calGridXYToPx: (GridX?: number | undefined, GridY?: number | undefined) => {
+    calGridXYToPx: (GridX?: number, GridY?: number) => {
         x: number | undefined;
         y: number | undefined;
     };
@@ -26,7 +26,7 @@ export default class GridItem extends React.Component<GridItemProps, {
         GridX: number | undefined;
         GridY: number | undefined;
     };
-    calWHtoPx: (w?: number | undefined, h?: number | undefined) => {
+    calWHtoPx: (w?: number, h?: number) => {
         wPx: number | undefined;
         hPx: number | undefined;
     };

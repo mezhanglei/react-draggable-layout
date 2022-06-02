@@ -1,5 +1,5 @@
 import *as React from 'react';
-import DragGrid from '../../../../src';
+import DragGrid from '../../../src';
 import { Words } from './largedata';
 import './index.css';
 
