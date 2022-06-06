@@ -2,7 +2,7 @@
 
 English | [中文说明](./README_CN.md)
 
-[![Version](https://img.shields.io/badge/version-0.2.2-green)](https://www.npmjs.com/package/react-draggable-layout)
+[![Version](https://img.shields.io/badge/version-0.2.3-green)](https://www.npmjs.com/package/react-draggable-layout)
 
 # Introduction?
 Components with custom layout by drag and drop can also define the layout of the elements of the interface by means of a fixed format data source. The element is set to `position: absolute`.
