@@ -1,6 +1,6 @@
 {
   "name": "react-draggable-layout",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "draggable layout",
   "main": "lib/index.js",
   "types": "./lib/index.d.ts",
@@ -88,9 +88,9 @@
     "history": "^5.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-free-draggable": "^7.1.9",
+    "react-free-draggable": "^8.1.1",
     "react-loadable": "^5.5.0",
-    "react-resize-zoom": "^2.2.2",
+    "react-resize-zoom": "^2.2.4",
     "react-router-dom": "^5.2.0"
   },
   "browserslist": [
